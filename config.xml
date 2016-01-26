@@ -1,5 +1,5 @@
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="il.co.beseg.meginis" version="1.0.0">
-  <name>Hebrew McGinnis Alike Learning</name>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="il.co.beseg.leran-hebrew-reading" version="1.0.0">
+  <name>Leran Hebrew reading with McGinnis inspired method</name>
   <description>Leran Hebrew reading with McGinnis inspired method.</description>
   <author href="http://beseg.co.il" email="beseg7@gmail.com">Yaakov Shoham</author>
   <content src="index.html"/>
