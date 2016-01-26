@@ -41,9 +41,22 @@
 				$.mobile.changePage.defaults.changeHash = false;
 				$.mobile.hashListeningEnabled = false;
 				$.mobile.pushStateEnabled = false;
+				
+				//$.mobile.activeBtnClass = "unused";
+				
+				//http://stackoverflow.com/questions/11024464/speeding-up-page-transitions-in-jquery-mobile-1-1-for-iphone-apps-built-with-pho
+				//http://therockncoder.blogspot.no/2012/06/three-quick-performance-tips-for.html //צריך לקרוא
+				$.mobile.buttonMarkup.hoverDelay = 0;
+				
+				//http://stackoverflow.com/questions/5953753/flickering-when-navigating-between-pages/8939296#8939296
+				//if (navigator.userAgent.indexOf("Android"/*+" 2"*/) != -1) {
+				//	$.mobile.defaultPageTransition = 'none';
+				//	$.mobile.defaultDialogTransition = 'none';
+				//}
 			});
 		</script>
 		<script type="text/javascript" src="jqm/jquery.mobile-1.4.5.min.js"></script>
+		<script type="text/javascript" src="js/energize-min.js"></script>
 		<script type="text/javascript" src="js/lib.js"></script>
 		<script type="text/javascript" src="js/menu.js"></script>
 		<script type="text/javascript" src="js/chooseByEar.js"></script>
