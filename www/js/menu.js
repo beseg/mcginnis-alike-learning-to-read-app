@@ -21,12 +21,14 @@ function init() {
 	{
 		var html = "";
 		html += '<button id="chooseByEar">' + "לבחור 1 מתוך 3 לפי האוזן" + '</button>';
+		html += '<button id="learnDraw">' + "לצייר" + '</button>';
 		$("#menu-menu").html(html).trigger('create');
-		$page.find("button").click(buttonClick);
+		$page.find("button").onn("click", buttonClick);
 	}
 }
 
-function buttonClick() {
+function buttonClick(e) {
+	twice(e);
 	var id = this.id;
 	window.APP[id].init(); 
 	//$.mobile.navigate("#" + id + "-page");

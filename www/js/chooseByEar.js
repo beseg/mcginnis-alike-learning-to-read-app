@@ -78,13 +78,15 @@ function nextRiddle(isFirst) {
 	
 	audio(isFirst ? "what-is-the-matched-sound.mp3" : "bip.mp3").done(function(){
 		audio(dict[qst].audio).done(function() {
-			$("#chooseByEar-letters img").click(buttonClick);
+			$("#chooseByEar-letters img").onn("vclick", buttonClick);
 		});
 	});
 }
 
-function buttonClick() {
-	$("#chooseByEar-letters img").unbind("click");
+function buttonClick(e) {
+	twice(e);
+	
+	$("#chooseByEar-letters img").offf("vclick");
 	var id = this.id.replace(/^chooseByEar-/, "");
 	if(id === qst) {
 		$(this).addClass("good");
@@ -95,7 +97,7 @@ function buttonClick() {
 		$(this).addClass("bad");
 		audioBad().done(function() {
 			audio(dict[qst].audio).done(function() {
-				$("#chooseByEar-letters img").click(buttonClick);
+				$("#chooseByEar-letters img").onn("vclick", buttonClick);
 			});
 		});
 	}

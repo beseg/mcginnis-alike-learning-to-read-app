@@ -8,7 +8,52 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <link rel="stylesheet" type="text/css" href="jqm/jquery.mobile-1.4.5.min.css" />
-        <title>Hello World</title>
+        <title>-</title>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="js/sketch.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript">
+			window.onerror = function(msg, url, linenumber) {
+				alert('Type: ' + typeof msg + '\nError message: ' + msg + '\nURL: ' + url + '\nLine Number: ' + linenumber);
+				
+				return true;
+			};
+			//http://stackoverflow.com/questions/32453806/uncaught-securityerror-failed-to-execute-replacestate-on-history-cannot-be
+			$(document).bind('mobileinit',function(){
+				$.mobile.changePage.defaults.changeHash = false;
+				$.mobile.hashListeningEnabled = false;
+				$.mobile.pushStateEnabled = false;
+				
+				$.mobile.defaultPageTransition = 'none';
+				$.mobile.defaultDialogTransition = 'none';
+				$.mobile.touchOverflowEnabled = false;
+				$.mobile.hoverDelay = 0;
+				//$.mobile.autoInitializePage = false;
+				//$.mobile.loadingMessage = '' ;           				
+				
+				//$.mobile.activeBtnClass = "unused";
+				
+				//http://stackoverflow.com/questions/11024464/speeding-up-page-transitions-in-jquery-mobile-1-1-for-iphone-apps-built-with-pho
+				//http://therockncoder.blogspot.no/2012/06/three-quick-performance-tips-for.html //צריך לקרוא
+				$.mobile.buttonMarkup.hoverDelay = 0;
+				
+				//http://stackoverflow.com/questions/5953753/flickering-when-navigating-between-pages/8939296#8939296
+				//if (navigator.userAgent.indexOf("Android"/*+" 2"*/) != -1) {
+				//	$.mobile.defaultPageTransition = 'none';
+				//	$.mobile.defaultDialogTransition = 'none';
+				//}
+			});
+		</script>
+		<script type="text/javascript" src="jqm/jquery.mobile-1.4.5.min.js"></script>
+		<script type="text/javascript" src="js/energize-min.js"></script>
+		<script type="text/javascript" src="js/lib.js"></script>
+		<script type="text/javascript" src="js/menu.js"></script>
+		<script type="text/javascript" src="js/chooseByEar.js"></script>
+		<script type="text/javascript" src="js/learnDraw.js"></script>
+        <script type="text/javascript">
+		$(window.APP.menu.init);
+        </script>
     </head>
     <body>
 		<a href="" id="transitor"></a>
@@ -31,37 +76,14 @@
 			<div role="main" class="ui-content" id="chooseByEar-letters">
 			</div>
 		</div>
-
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-		<script type="text/javascript">
-			//http://stackoverflow.com/questions/32453806/uncaught-securityerror-failed-to-execute-replacestate-on-history-cannot-be
-			$(document).bind('mobileinit',function(){
-				$.mobile.changePage.defaults.changeHash = false;
-				$.mobile.hashListeningEnabled = false;
-				$.mobile.pushStateEnabled = false;
-				
-				//$.mobile.activeBtnClass = "unused";
-				
-				//http://stackoverflow.com/questions/11024464/speeding-up-page-transitions-in-jquery-mobile-1-1-for-iphone-apps-built-with-pho
-				//http://therockncoder.blogspot.no/2012/06/three-quick-performance-tips-for.html //צריך לקרוא
-				$.mobile.buttonMarkup.hoverDelay = 0;
-				
-				//http://stackoverflow.com/questions/5953753/flickering-when-navigating-between-pages/8939296#8939296
-				//if (navigator.userAgent.indexOf("Android"/*+" 2"*/) != -1) {
-				//	$.mobile.defaultPageTransition = 'none';
-				//	$.mobile.defaultDialogTransition = 'none';
-				//}
-			});
-		</script>
-		<script type="text/javascript" src="jqm/jquery.mobile-1.4.5.min.js"></script>
-		<script type="text/javascript" src="js/energize-min.js"></script>
-		<script type="text/javascript" src="js/lib.js"></script>
-		<script type="text/javascript" src="js/menu.js"></script>
-		<script type="text/javascript" src="js/chooseByEar.js"></script>
-        <script type="text/javascript">
-		$(window.APP.menu.init);
-        </script>
+		
+		<div data-role="page" id="learnDraw-page">
+			<div data-role="header">
+				<h1>לצייר </h1>
+				<a href="#menu-page" style="float:left">חזרה לתפריט</a>
+			</div>
+			<div role="main" class="ui-content" id="learnDraw-content">
+			</div>
+		</div>
     </body>
 </html>
