@@ -42,16 +42,15 @@ function nextRiddle(isFirst) {
 	$("#chooseByEar-letters").html(html);
 	
 	audio(isFirst ? "instructions/what-is-the-matched-sound.mp3" : "effects/bip.mp3").done(function(){
-		audio(APP.symbolsDict[qst].audio).done(function() {
-			$("#chooseByEar-letters img").onn("vclick", buttonClick);
-		});
+		audio(APP.symbolsDict[qst].audio);
 	});
+	$("#chooseByEar-letters img").onn("vclick", buttonClick);
 }
 
 function buttonClick(e) {
 	twice(e);
 	
-	$("#chooseByEar-letters img").offf("vclick");
+	//$("#chooseByEar-letters img").offf("vclick");
 	var id = this.id.replace(/^chooseByEar-/, "");
 	if(id === qst) {
 		$(this).addClass("good");
@@ -62,7 +61,7 @@ function buttonClick(e) {
 		$(this).addClass("bad");
 		APP.audioBad().done(function() {
 			audio(APP.symbolsDict[qst].audio).done(function() {
-				$("#chooseByEar-letters img").onn("vclick", buttonClick);
+				//$("#chooseByEar-letters img").onn("vclick", buttonClick);
 			});
 		});
 	}
