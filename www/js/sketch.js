@@ -138,15 +138,20 @@ var __slice = Array.prototype.slice;
           this.stopPainting();
       }
       if (this.painting) {
-        this.action.events.push({
+		var point = {
           x: e.pageX - this.canvas.offset().left,
           y: e.pageY - this.canvas.offset().top,
           event: e.type
-        });
+        };
+        this.action.events.push(point);
+        if(this.options.hook != undefined) {
+          this.options.hook(point.x, point.y);
+        }
         return this.redraw();
       }
     },
     draw: function(action) {
+	  //this happanes even when just getting in or out from the canvas!
       var event, previous, _i, _len, _ref;
       this.context.lineJoin = "round";
       this.context.lineCap = "round";

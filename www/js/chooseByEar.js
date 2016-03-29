@@ -36,7 +36,7 @@ function nextRiddle(isFirst) {
 
 	var html = "";
 	for(i in anses)
-		html += "<img src='image/" + APP.symbolsDict[anses[i]].imageFill + "' alt='' id='chooseByEar-" + anses[i] + "'/>"
+		html += "<img src='image/" + APP.symbolsDict[anses[i]].image + "' alt='' id='chooseByEar-" + anses[i] + "'/>"
 	
 	$("#chooseByEar-letters").html(html);
 	

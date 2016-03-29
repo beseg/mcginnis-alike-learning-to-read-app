@@ -36,12 +36,40 @@ body {
 .overflow {
 	overflow:hidden;
 }
-.back-button {
+.home-button {
 	width:9vh;
 	position:absolute;
 	bottom:0;
 	right:0;
 }
+.next-button {
+	width:9vh;
+	position:absolute;
+	bottom:0;
+	left:0;
+}
+.smile {
+	background-image:url('../image/emoticons.svg');
+	background-size:25vh 15vh;
+	width:5vh;
+	height:5vh;
+}
+.smile-0 { background-position:0vh 0vh; }
+.smile-1 { background-position:5vh 0vh; }
+.smile-2 { background-position:10vh 0vh; }
+.smile-3 { background-position:15vh 0vh; }
+.smile-4 { background-position:20vh 0vh; }
+.smile-5 { background-position:0vh 5vh; }
+.smile-6 { background-position:5vh 5vh; }
+.smile-7 { background-position:10vh 5vh; }
+.smile-8 { background-position:15vh 5vh; }
+.smile-9 { background-position:20vh 5vh; }
+.smile-10 { background-position:0vh 10vh; }
+.smile-11 { background-position:5vh 10vh; }
+.smile-12 { background-position:10vh 10vh; }
+.smile-13 { background-position:15vh 10vh; }
+.smile-14 { background-position:20vh 10vh; }
+
 
 #menu-menu img {
 	width:60vh;
@@ -74,4 +102,33 @@ body {
 
 #chooseByEar-letters img.good {
 	background:#afa;
+}
+
+#learnDraw-canvasWrapper {
+	margin:6vh 33.5vh;
+	height:88vh;
+	width:66vh;
+	position:relative;
+}
+#learnDraw-canvas {
+	position:absolute;
+	top:0;
+	left:0;
+	height:88vh;
+	width:66vh;
+	z-index:2
+}
+#learnDraw-letter {
+	position:absolute;
+	top:0;
+	left:0;
+	height:88vh;
+	width:66vh;
+	z-index:3;
+	pointer-events:none;
+}
+#learnDraw-marker {
+	position:absolute;
+	z-index:4;
+	pointer-events:none;
 }

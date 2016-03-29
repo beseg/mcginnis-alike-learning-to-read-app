@@ -90,6 +90,10 @@ function rand(maxExclusive) {
 	return Math.floor((Math.random() * maxExclusive));
 }
 
+function milliSec() {
+	return (new Date()).getTime();
+}
+
 function delay(time, func) {
 	setTimeout(func, time);
 }
