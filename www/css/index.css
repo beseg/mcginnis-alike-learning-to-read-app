@@ -7,6 +7,7 @@ body {
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
     background-color:#E4E4E4;
+	background-color:#777;
     background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
     background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
     background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
@@ -19,23 +20,34 @@ body {
     );
     background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:12px;
-    height:100%;
-    margin:0px;
-    padding:0px;
+    font-size:1vh;
+    height:100vh;
+    margin:0 auto;
+    padding:0;
     text-transform:uppercase;
-    width:100%;
+    width:133vh;
+}
+
+#body {
+    height:100vh;
+    margin:0 auto;
+    width:133vh;
+}
+
+.ui-content {
+	padding:0;
 }
 
 #chooseByEar-letters { 
-	width:100%;
+	width:133vh;
 	text-align:center;
+	margin:
 }
 
 #chooseByEar-letters img {
-	border:3pt solid gray;
-	width:30%;
-	margin:3pt;
+	border:1vh solid gray;
+	width:38vh;
+	margin:2vh;
 }
 
 #chooseByEar-letters img.bad {

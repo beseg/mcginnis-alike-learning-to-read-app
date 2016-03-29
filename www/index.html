@@ -6,8 +6,8 @@
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
         <link rel="stylesheet" type="text/css" href="jqm/jquery.mobile-1.4.5.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>-</title>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
@@ -56,34 +56,36 @@
         </script>
     </head>
     <body>
-		<a href="" id="transitor"></a>
+		<div id="body"> 
+			<a href="" id="transitor"></a>
 
-		<div data-role="page" id="menu-page">
-			<div data-role="header">
-				<div id="menu-visits" style="float:left;padding:10px;"></div>
-				<h1>ברוכים הבאים</h1>
+			<div data-role="page" id="menu-page">
+				<div data-role="header">
+					<div id="menu-visits" style="float:left;padding:10px;"></div>
+					<h1>ברוכים הבאים</h1>
+				</div>
+
+				<div role="main" class="ui-content" id="menu-menu">
+				</div>
 			</div>
 
-			<div role="main" class="ui-content" id="menu-menu">
+			<div data-role="page" id="chooseByEar-page">
+				<div data-role="header">
+					<h1>לבחור לפי שמיעה</h1>
+					<a href="#menu-page" style="float:left">חזרה לתפריט</a>
+				</div>
+				<div role="main" class="ui-content" id="chooseByEar-letters">
+				</div>
 			</div>
-		</div>
-
-		<div data-role="page" id="chooseByEar-page">
-			<div data-role="header">
-				<h1>לבחור לפי שמיעה</h1>
-				<a href="#menu-page" style="float:left">חזרה לתפריט</a>
+			
+			<div data-role="page" id="learnDraw-page">
+				<div data-role="header">
+					<h1>לצייר </h1>
+					<a href="#menu-page" style="float:left">חזרה לתפריט</a>
+				</div>
+				<div role="main" class="ui-content" id="learnDraw-content">
+				</div>
 			</div>
-			<div role="main" class="ui-content" id="chooseByEar-letters">
-			</div>
-		</div>
-		
-		<div data-role="page" id="learnDraw-page">
-			<div data-role="header">
-				<h1>לצייר </h1>
-				<a href="#menu-page" style="float:left">חזרה לתפריט</a>
-			</div>
-			<div role="main" class="ui-content" id="learnDraw-content">
-			</div>
-		</div>
+		</div> 
     </body>
 </html>
