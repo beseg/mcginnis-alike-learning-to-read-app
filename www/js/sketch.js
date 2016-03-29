@@ -156,7 +156,7 @@ var __slice = Array.prototype.slice;
       this.context.lineJoin = "round";
       this.context.lineCap = "round";
       this.context.beginPath();
-      this.context.moveTo(action.events[0].x, action.events[0].y);
+      this.context.moveTo(action.events[0].x + 0.01 /*force line even if in the same point*/, action.events[0].y);
       _ref = action.events;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         event = _ref[_i];

@@ -19,16 +19,15 @@ for(var i = 0; i < smilesCount; ++i)
 smilesClasses = smilesClasses.trim();
 
 var pointIndex;
-//var currentRect;
 var symbol;
-
 var $marker;
+
 function init() {
-	nextRiddle();
-	$("#learnDraw-next").onn("click", nextRiddle);
+	nextRiddle(true);
+	$("#learnDraw-next").onn("click", function() { nextRiddle(); });
 }
 
-function nextRiddle() {
+function nextRiddle(isFirst) {
 	//$("#learnDraw-next").hide();
 	var arr = APP.settings.symbolsArray;
 	var r;
@@ -61,8 +60,7 @@ function nextRiddle() {
 
 	pointIndex = 0;
 	placeSmile();
-	
-	isFirst = true;
+
 	audio(isFirst ? "instructions/write-the-symbol-by-the-face.mp3" : "effects/bip.mp3").done(function(){
 		audio(symbol.audio);
 	});
