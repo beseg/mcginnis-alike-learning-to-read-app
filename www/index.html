@@ -14,10 +14,9 @@
         <script type="text/javascript" src="js/sketch.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
 		<script type="text/javascript">
-			window.onerror = function(msg, url, linenumber) {
-				alert('Type: ' + typeof msg + '\nError message: ' + msg + '\nURL: ' + url + '\nLine Number: ' + linenumber);
-				
-				return true;
+			window.onerror = function(msg, url, linenumber, a) {
+				//alert('Type: ' + typeof msg + '\nError message: ' + msg + '\nURL: ' + url + '\nLine Number: ' + linenumber);
+				//return true;
 			};
 			//http://stackoverflow.com/questions/32453806/uncaught-securityerror-failed-to-execute-replacestate-on-history-cannot-be
 			$(document).bind('mobileinit',function(){
@@ -48,6 +47,7 @@
 		<script type="text/javascript" src="jqm/jquery.mobile-1.4.5.min.js"></script>
 		<script type="text/javascript" src="js/energize-min.js"></script>
 		<script type="text/javascript" src="js/lib.js"></script>
+        <script type="text/javascript" src="js/data.js"></script>
 		<script type="text/javascript" src="js/menu.js"></script>
 		<script type="text/javascript" src="js/chooseByEar.js"></script>
 		<script type="text/javascript" src="js/learnDraw.js"></script>
