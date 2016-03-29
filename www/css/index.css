@@ -71,8 +71,13 @@ body {
 .smile-14 { background-position:20vh 10vh; }
 
 
+#menu-menu {
+	width:104vh;
+	margin:10vh auto;
+}
 #menu-menu img {
-	width:60vh;
+	width:50vh;
+	height:25vh;
 	margin:1vh;
 }
 #menu-visits {
@@ -82,7 +87,23 @@ body {
 	left:0;
 	text-align:left;
 }
+#menu-settingsEdit {
+	width:9vh;
+	position:absolute;
+	bottom:0;
+	right:0;
+}
 
+#settingsEdit-content table {
+    border-collapse: collapse;
+}
+#settingsEdit-content th, #settingsEdit-content td {
+    border: 1px solid black;
+}
+#settingsEdit-content input {
+	display:block;
+	width:100%;
+}
 #chooseByEar-letters { 
 	width:133vh;
 	text-align:center;

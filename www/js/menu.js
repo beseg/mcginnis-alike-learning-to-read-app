@@ -1,7 +1,7 @@
 ﻿(function(){
 
-window.APP = window.APP || {};
-window.APP.menu = {
+var APP = window.APP = window.APP || {};
+APP.menu = {
 	init: init
 };
 
@@ -20,8 +20,8 @@ function init() {
 	}
 	{
 		var html = "";
-		html += '<img id="chooseByEar" src="image/menu/chooseByEar.png" alt=""/>';
-		html += '<img id="learnDraw" src="image/menu/chooseByEar.png" alt=""/>';
+		html += '<img id="menu-chooseByEar" src="image/menu/chooseByEar.png" alt=""/>';
+		html += '<img id="menu-learnDraw" src="image/emoticons.svg" alt=""/>';
 		$("#menu-menu").html(html);//.trigger('create');
 		$page.find("img").onn("click", click);
 	}
@@ -29,9 +29,12 @@ function init() {
 
 function click(e) {
 	twice(e);
-	var id = this.id;
-	window.APP[id].init(); 
-	navToPage(id);
+	var id = this.id.replace('menu-', "");
+	/*if(id == "settingsEdit") {
+	} else*/ {
+		APP[id].init(); 
+		navToPage(id);
+	}
 }
 
 })();

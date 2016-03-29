@@ -30,8 +30,11 @@ function init() {
 
 function nextRiddle() {
 	//$("#learnDraw-next").hide();
-	var arr = APP.symbolsArray;
-	var r = rand(arr.length);
+	var arr = APP.settings.symbolsArray;
+	var r;
+	do {
+		r = rand(arr.length);
+	} while(symbol != null && arr[r] == symbol.id && arr.length > 1);
 	symbol = APP.symbolsDict[arr[r]];
 	
 	//כתבו את הצליל לפי הפרצוף
@@ -74,7 +77,7 @@ function placeSmile() {
 	if(pointIndex >= symbol.points.length) {
 		$marker.hide();
 		audio(symbol.audio).done(APP.audioGood);
-		$("##learnDraw-next").show();
+		//$("#learnDraw-next").show();
 	} else {
 		var kp = symbol.points[pointIndex];
 		$marker.css({"left": "" + (wwv * kp[0] - 2.5) + "vh", "top": (hhv * kp[1] - 2.5) + "vh"});
@@ -87,7 +90,7 @@ function hook(x, y) {
 		return;
 	
 	//באמצעות שורה זו ניתן להמציא את מערכי הנקודות
-	console.log("[" + (x / wwpx) + "," + (y / hhpx) + "],");
+	//console.log("[" + (x / wwpx) + "," + (y / hhpx) + "],");
 	
 	var rat = ratio * 3;
 	var p = $marker.position();

@@ -17,7 +17,7 @@ function init() {
 
 var qst, anses, maxAnsesCount = 3;
 function nextRiddle(isFirst) {
-	var arr = APP.symbolsArray.slice();
+	var arr = APP.settings.symbolsArray.slice();
 
 	var r = rand(arr.length);
 	qst = arr[r];
@@ -27,7 +27,8 @@ function nextRiddle(isFirst) {
 	while(anses.length < maxAnsesCount && arr.length) {
 		r = rand(arr.length);
 		var ans = arr[r];
-		if(APP.symbolsNegateArray.indexOf(qst + "|" + ans) == -1 && APP.symbolsNegateArray.indexOf(ans + "|" + qst) == -1)
+		if(qst != ans && anses.indexOf(ans) == -1 && 
+			APP.symbolsNegateArray.indexOf(qst + "|" + ans) == -1 && APP.symbolsNegateArray.indexOf(ans + "|" + qst) == -1)
 			anses.push(ans);
 		arr.splice(r, 1);
 	}
