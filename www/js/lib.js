@@ -62,15 +62,28 @@ function padThreeZeros(num) {
 }
 
 function navToPage(id) {
-	$("#transitor").attr("href", "#" + id + "-page").click();
+	//$("#transitor").attr("href", "#" + id + "-page").click();
+	var $old = $("#body div:first");
+	if($old.length > 0)
+		$old.appendTo("#bucket");
+
+	var $new = $("#" + id + "-page");
+	$new.appendTo("#body");
 }
 
+var audioElem = null;
 function audio(filename) {
-	var audio = new Audio('audio/' + filename);
-	var def = $.Deferred();
-	$(audio).on("ended", function() { def.resolve(); });
-	audio.play();
-	return def.promise();
+	if(audioElem != null) {
+		audioElem.pause();
+	}
+	if(filename != null) {
+		audioElem = new Audio('audio/' + filename);
+		var def = $.Deferred();
+		$(audioElem).on("ended", function() { def.resolve(); });
+		$(audioElem).on("paused", function() { def.resolve(); });
+		audioElem.play();
+		return def.promise();
+	}
 }
 
 function rand(maxExclusive) {

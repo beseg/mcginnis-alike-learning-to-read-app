@@ -12,7 +12,11 @@
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
         <script type="text/javascript" src="js/sketch.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="js/lib.js"></script>
+        <script type="text/javascript" src="js/data.js"></script>
+		<script type="text/javascript" src="js/menu.js"></script>
+		<script type="text/javascript" src="js/chooseByEar.js"></script>
+		<script type="text/javascript" src="js/learnDraw.js"></script>
 		<script type="text/javascript">
 			window.onerror = function(msg, url, linenumber, a) {
 				//alert('Type: ' + typeof msg + '\nError message: ' + msg + '\nURL: ' + url + '\nLine Number: ' + linenumber);
@@ -46,45 +50,39 @@
 		</script>
 		<script type="text/javascript" src="jqm/jquery.mobile-1.4.5.min.js"></script>
 		<script type="text/javascript" src="js/energize-min.js"></script>
-		<script type="text/javascript" src="js/lib.js"></script>
-        <script type="text/javascript" src="js/data.js"></script>
-		<script type="text/javascript" src="js/menu.js"></script>
-		<script type="text/javascript" src="js/chooseByEar.js"></script>
-		<script type="text/javascript" src="js/learnDraw.js"></script>
         <script type="text/javascript">
-		$(window.APP.menu.init);
+		$(function() {
+			//$("#body").appendTo("body");
+			//$("#bucket").appendTo("body");
+			//$("div[data-role]").remove();
+			
+			window.APP.menu.init();
+			navToPage("menu");
+
+			$(".back-button").onn("click", function() { 
+				navToPage("menu");
+				audio();
+			});
+		});
         </script>
     </head>
     <body>
 		<div id="body"> 
-			<a href="" id="transitor"></a>
-
-			<div data-role="page" id="menu-page">
-				<div data-role="header">
-					<div id="menu-visits" style="float:left;padding:10px;"></div>
-					<h1>ברוכים הבאים</h1>
-				</div>
-
-				<div role="main" class="ui-content" id="menu-menu">
-				</div>
+		</div>
+		<div id="bucket"> 
+			<div id="menu-page">
+				<div id="menu-menu"></div>
+				<div id="menu-visits"></div>
 			</div>
 
-			<div data-role="page" id="chooseByEar-page">
-				<div data-role="header">
-					<h1>לבחור לפי שמיעה</h1>
-					<a href="#menu-page" style="float:left">חזרה לתפריט</a>
-				</div>
-				<div role="main" class="ui-content" id="chooseByEar-letters">
-				</div>
+			<div id="chooseByEar-page">
+				<div class="overflow" id="chooseByEar-letters"></div>
+				<img src="image/back.png" alt="חזרה" class="back-button"/>
 			</div>
 			
-			<div data-role="page" id="learnDraw-page">
-				<div data-role="header">
-					<h1>לצייר </h1>
-					<a href="#menu-page" style="float:left">חזרה לתפריט</a>
-				</div>
-				<div role="main" class="ui-content" id="learnDraw-content">
-				</div>
+			<div id="learnDraw-page">
+				<div class="overflow" id="learnDraw-content"></div>
+				<img src="image/back.png" alt="חזרה" class="back-button"/>
 			</div>
 		</div> 
     </body>

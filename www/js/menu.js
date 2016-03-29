@@ -20,18 +20,17 @@ function init() {
 	}
 	{
 		var html = "";
-		html += '<button id="chooseByEar">' + "לבחור 1 מתוך 3 לפי האוזן" + '</button>';
-		html += '<button id="learnDraw">' + "לצייר" + '</button>';
-		$("#menu-menu").html(html).trigger('create');
-		$page.find("button").onn("click", buttonClick);
+		html += '<img id="chooseByEar" src="image/menu/chooseByEar.png" alt=""/>';
+		html += '<img id="learnDraw" src="image/menu/chooseByEar.png" alt=""/>';
+		$("#menu-menu").html(html);//.trigger('create');
+		$page.find("img").onn("click", click);
 	}
 }
 
-function buttonClick(e) {
+function click(e) {
 	twice(e);
 	var id = this.id;
 	window.APP[id].init(); 
-	//$.mobile.navigate("#" + id + "-page");
 	navToPage(id);
 }
 
